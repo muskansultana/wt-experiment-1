@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <style>
+            .forms{
+                display:flex;
+                justify-content: center;
+              background-color: rgb(255, 117, 67);
+              width:40%;
+              margin-left: 30%;
+            }
+        </style>
+    </head>
+<body>
+    <h1 align="center"><u>REGISTRATION FORM</u></h1>
+    <div class="forms">
+    <form name="studentdetails" method="get" action="\abc.html">
+        <table id="regis" cell-spacing=20px cell-padding="0px" class="center">
+            <tr>
+                <td ><label for="username">Username :</label></td>
+                <td><input name="username" type="text" id="username" placeholder="enter username" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email :</label></td>
+                <td><input name="email" type="email" id="email" placeholder="enter your email" required></td>
+            </tr>
+            <tr>
+                <td><label for="Gen">Gender :</label></td>
+                <td class="b1"><input name="Gen" type="radio" id="Gen" >Male
+                    <input name="Gen" type="radio" id="Gen">Female
+
+                </td>
+            </tr>
+            <tr>
+                <td><label for="rel">Religion : </label></td>
+                <td>
+                    <select name="rel" required>
+                        <option val="hin">Hindu</option>
+                        <option value="chr">Christian</option>
+                        <option value="mul">Muslim</option>
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date Of Birth :</label></td>
+                <td><input name="dob" type="date" id="dob"></td>
+            </tr>
+            <tr>
+                <td><label for="lang">Languages :</label></td>
+                <td><input name="lang" type="checkbox" id="lang" >Hindi
+                    <input name="lang" type="checkbox" id="lang">English
+                    <input name="lang" type="checkbox" id="lang">Telugu
+                </td>
+            </tr>
+            <tr>
+                <td><label for="adr">Address :</label></td>
+                <td><textarea rows="4" cols="20" placeholder="enter your address"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="pwd">Password :</label></td>
+                <td><input name="pwd" type="password" id="pwd" placeholder="enter strong password" required></td>
+            </tr>
+            <tr>
+                <td><label for="cpwd"> Confirm Password :</label></td>
+                <td><input name="cpwd" type="password" id="cpwd" placeholder="enter same password here" required></td>
+            </tr>
+            <tr>
+                <td><input name="sub" type="submit" id="sub" value="Submit" required></td>
+                    <td><input name="res" type="reset" id="res" value="Reset"></td>
+            </tr>
+
+
+
+
+        </table>
+    </form>
+    </div>
+</body>
+</html>

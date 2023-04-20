@@ -1,0 +1,81 @@
+<html>
+    <link rel ='stylesheet' type='text/css' href ='style.css'>
+    <head>
+        <style> p {display:none;}</style>
+        </head>
+
+        <body>
+            <table>
+                <tr>
+                    <th>
+                        <button id='up' onclick='count()'>drop box</button>
+                        <p id="1" onclick="textbox()">TEXT BOX</p>
+                        <p id="2" onclick=" radio()">RADIO BOX</p>
+                        <p id="3" onclick="button()">BUTTON BOX</p>
+                        <p id="4" onclick="checkbox()">CHECK BOX</p>
+                        <BR>
+                            
+                    </th>
+                    <th>
+                        <div id="y">
+                        
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <script>
+                let x=1;
+                function count(){
+                    if (x===0){
+                        display2();
+                        x=1;
+                    }
+                    else{
+                        display1();
+                        x=0;
+                    }
+                }
+                function display1(){
+                    
+                    document.getElementById('1').style.display='block';
+                    document.getElementById('2').style.display='block';
+                    document.getElementById('3').style.display='block';
+                    document.getElementById('4').style.display='block';
+                }
+                function display2(){
+                    document.getElementById('1').style.display='none';
+                    document.getElementById('2').style.display='none';
+                    document.getElementById('3').style.display='none';
+                    document.getElementById('4').style.display='none';
+                }
+                function textbox(){
+                    const t= document.createElement("input");
+                    t.setAttribute("type",'text');
+                    document.getElementById('y').appendChild(t);
+                }
+                function radio(){
+                    const t= document.createElement("input");
+                    t.setAttribute("type",'radio');
+                    document.getElementById('y').appendChild(t);
+                    const h= document.createElement('label');
+                    h.innerHTML='radio button';
+                    document.getElementById('y').appendChild(h);
+                }
+                function checkbox(){
+                    const t= document.createElement("input");
+                    t.setAttribute("type",'checkbox');
+                    document.getElementById('y').appendChild(t);
+                    const h= document.createElement('label');
+                    h.innerHTML='checkbox';
+                    document.getElementById('y').appendChild(h);
+                }
+                function button(){
+                    const t= document.createElement("input");
+                    t.setAttribute("value",'I am button');
+                    t.setAttribute("type",'button');
+                    document.getElementById('y').appendChild(t);
+                }
+            </script>
+        </body>
+   
+</html>

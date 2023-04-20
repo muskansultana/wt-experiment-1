@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Just Practice</title>
+  <style>
+    body,select,input[type="text"],textarea{
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    table,
+    tr,
+    td {
+      border: 2px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      margin-top: 30px;
+      margin: 0 auto;
+
+    }
+
+    .pricelist {
+      text-align: center;
+    }
+
+    .mybutton {
+      background-color: #4CAF50;
+
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      border: none;
+      display: inline-block;
+      font-size: 16px;
+
+      cursor: pointer;
+      background-color: #555555;
+      border-radius: 4px;
+    }
+
+    #entrybox {
+      width: 20%;
+      height: 43px;
+      margin-left: 5px;
+      border: 1px solid #b4b39d;
+      border-radius: 5px;
+      background-color: #c3c2ab;
+    }
+
+    .bill {
+      margin-left: 23%;
+      margin-right: 20%;
+
+    }
+
+    .bill1 {
+      margin-left: 33%;
+      margin-right: 20%;
+
+    }
+
+    .bill2 {
+      margin-left: 50%;
+      position: relative;
+    }
+     .bill3 {
+      margin-left: 30%;
+      position: absolute;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="pricelist">
+   <h1 style="font-family:serif ;">WELCOME TO FRUITCHOICE....</h1>
+    <h3 style="font-family:cursive;">Delicious Fruits</h1>
+    <table>
+      <tr>
+        <td>Strawberry</td>
+        <td>Apple</td>
+        <td>Grapes</td>
+        <td>Pomegranate</td>
+        <td>Guava</td>
+      </tr>
+      <tr>
+        <td>160 pkr/kg</td>
+        <td>200 pkr/kg</td>
+        <td>170 pkr/kg</td>
+        <td>220 pkr/kg</td>
+        <td>60 pkr/kg</td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <form class="bill1">
+    <select id="sf">
+  <option selected value = "Strawberry">Strawberry</option>
+  <option value = "Apple">Apple</option>
+  <option value = "Grapes">Grapes</option>
+  <option value = "Guava">Guava</option>
+  <option value = "Pomegranate">Pomegranate</option>
+</select>
+    <input type="text" id="entrybox" pattern="\d*" placeholder="Input Amount">&nbsp;<b>KG</b>&nbsp;&nbsp;
+    <input type="button" value="ADD T0 CART" class="mybutton" id="getme">
+  </form>
+  <br><br>
+  <textarea class="bill" cols="60" rows="10" id="writeme"></textarea>
+  <br>
+  <input type="submit" value="CLEAR CART" class="mybutton bill3" id="clr">
+  <input type="submit" value="PAY BILL" class="mybutton bill2" id="out">
+  <script>
+    var straw = 160;
+    var apple = 200;
+    var grapes = 170;
+    var pome = 220;
+    var gu = 60;
+    var total = 0;
+    var check = 1;
+    var gw;
+    var sfruit;
+    var perkg;
+    var adder = document.querySelector("#getme");
+    adder.addEventListener("click", getMe);
+    var by = document.querySelector("#out");
+    by.addEventListener("click", checkOut);
+    var cme = document.querySelector("#clr");
+    cme.addEventListener("click", clearMe);
+
+    function getMe() {
+      sfruit = document.querySelector("#sf").value;
+      perkg = parseFloat(document.querySelector("#entrybox").value);
+      gw = document.querySelector("#writeme");
+      if (Number.isNaN(perkg) === true) {
+        alert("Only Numbers !!! Or The Field is Empty");
+        check = 0;
+      }
+      else if (perkg<0) {
+        alert("Negative value!! @stupid");
+        check = 0;
+      }
+      else{
+        check = 1;
+      }
+      if (check == 1) {
+     
+        switch (sfruit) {
+          case "Strawberry":
+            var st = straw * perkg;
+            gw.value += "Strawberry " + perkg + " kg = " + st + " rs\r";
+            total += st;
+            perkg.value = "";
+            break;
+          case "Apple":
+            var at = apple * perkg;
+            gw.value += "Apple " + perkg + " kg = " + at + " rs\r";
+            total += at;
+            perkg.value = "";
+            break;
+          case "Grapes":
+            var gr = grapes * perkg;
+            gw.value += "Grapes " + perkg + " Kg  = " + gr + " rs\r";
+            total += gr;
+            perkg.value = "";
+            break;
+          case "Guava":
+            var ga = gu * perkg;
+            gw.value += "Guava " + perkg + " Kg  = " + ga + " RS\r";
+            total += ga;
+            perkg.value = "";
+            break;
+          case "Pomegranate":
+            var pomy = pome * perkg;
+            gw.value += "Pomegranate " + perkg + " Kg  = " + pomy + " rs\r";
+            total += pomy;
+            perkg.value = "";
+            break;
+        }
+
+      }
+    }
+
+    function checkOut() {
+      gw.value += "--------------------------------------------------------------\r";
+      gw.value += "Your Total Bill Is = " + total + " rs Thanks For Shopping! :)\r";
+      gw.value += "--------------------------------------------------------------\r";
+      total = 0;
+    }
+    function clearMe () {
+      gw.value = "";
+    }
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<link rel='stylesheet' type='text/css' href='mystyle.css'>
+<body onload="window.alert('Page successfully loaded, i am window event')">
+  <h1 id="h">THIS IS MY JAVASCRIPT PAGE</h1>
+  <BUTTON ID="B" ONCLICK="CHANGE()">CHANGE HEADING</BUTTON>
+  <div> </div>
+  <br>
+  <IMG ID="i" src="banner4.jpg" width="200" height="100">
+  <div> </div>
+  <br>
+  <BUTTON ONCLICK="document.getElementById('i').src ='anits4.jpeg'">CLASSROOMS</BUTTON>
+  <BUTTON onclick="document.getElementById('i').src = 'buses.jpeg'">BUSES</BUTTON>
+  <BUTTON onclick="document.getElementById('i').src = 'anits1.jpeg'">ANITS CLG</BUTTON>
+  <BUTTON onclick="document.getElementById('i').src = 'images (1).jpeg'">LIBRARY</BUTTON>
+  <BR>
+
+  <BUTTON ONCLICK="document.getElementById('i').style.borderRadius = '50px'">Circle image</BUTTON>
+  <BUTTON ONCLICK="document.getElementById('i').style.borderRadius = '0px'">Normal image</BUTTON>
+  <input type=color>
+  <div>
+
+  </div>
+  <h2>Action Event</h2>
+  <p>Click the button to display the date.</p>
+
+  <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+  <p id="demo"></p>
+
+  <h2>Mouse event:The MouseEvent Object handles events that occur when the mouse interacts with the HTML document.</h2>
+  <p>Hover on the below paragraph</p>
+  <p id="para"> JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with
+    first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser
+    environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat</p>
+  <BUTTON ID="B2" ONCLICK="changecolor()">CHANGE COLOR</BUTTON>
+  <h2> Key event:The KeyboardEvent Object handles events that occur when a user presses a key on the keyboard.</h2>
+  <input type="text" id="input1" onkeydown="keydownevent()" />
+  <SCRIPT>
+    function CHANGE() {
+      document.getElementById('h').innerHTML = 'NEW JAVASCRIPT HEADING (onclick event)';
+    }
+    function changecolor() {
+      let t = document.getElementById('para')
+      t.style.color = 'yellow'
+    }
+    let t1 = document.getElementById('para')
+    t1.addEventListener('mouseover', function () {
+      t1.style.color = 'green';
+    });
+    t1.addEventListener('mouseout', function () {
+      t1.style.color = 'RED';
+    }
+    );
+    function keydownevent() {
+      document.getElementById("input1");
+      alert("Pressed a key");
+    }
+  </SCRIPT>
+
+
+</body>
+
+</html>
